@@ -1,6 +1,6 @@
 # DS 測資生成
 
-## Depends
+## Dependencies
 
 [https://github.com/MikeMirzayanov/testlib/blob/master/testlib.h](https://github.com/MikeMirzayanov/testlib/blob/master/testlib.h)
 
