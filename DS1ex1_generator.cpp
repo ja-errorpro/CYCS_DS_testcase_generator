@@ -175,9 +175,9 @@ int main(int argc, char *argv[]) {
       println("\nGenerating: input" + to_string(file + start) + ".txt");
     }
     long long x = rnd.next(3LL, 50LL);
-    x = opt<int>("x", x);
+    x = max(opt<int>("x", x), 1);
     long long y = rnd.next(3LL, 50LL);
-    y = opt<int>("y", y);
+    y = max(opt<int>("y", y), 1);
     if (printMaze) {
       println("\nx =", x, "y =", y);
     }
@@ -187,10 +187,8 @@ int main(int argc, char *argv[]) {
     maze.m = y - 1;
     maze.generate();
     long long goals = rnd.wnext(0LL, x * y - 1, -10);
-    goals = opt<int>("g", goals);
-    if (goals < 0) {
-      goals = 0;
-    }
+    goals = max(opt<int>("g", goals), 0);
+
     if (goals > x * y) {
       cout << "Too many goals! Set to x * y - 1" << endl;
       goals = x * y - 1;
